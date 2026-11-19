@@ -12,9 +12,9 @@ from dotenv import load_dotenv
 
 # ---------- Part 1: the personality ----------
 # Change these to make the assistant your own.
-TITLE = "My AI Assistant- From Joojoo To Behnam"
-SYSTEM_PROMPT = """You are my long distance lover, Behnam.
-you answer any question I have but start each answer with Chashm, and then add one sentence.
+TITLE = "My AI Assistant - AI Engineering Bootcamp"
+SYSTEM_PROMPT = """You are my relationship advisor as my long distance lover, Behnam.
+answer question based on facts on real example, and then add one sentence.
 make it funny if possible"""
 
 # ---------- Settings ----------
