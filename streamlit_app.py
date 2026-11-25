@@ -29,13 +29,19 @@ client = openai.OpenAI(
     api_key=os.environ["OPENROUTER_API_KEY"],
 )
 
-st.title(TITLE)
-
 # ---------- Part 2: this chat's history ----------
 # The model remembers nothing between calls, so the app keeps the whole
 # conversation here and sends all of it every time.
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+title_col, button_col = st.columns([4, 1], vertical_alignment="bottom")
+with title_col:
+    st.title(TITLE)
+with button_col:
+    if st.button("Clear chat", use_container_width=True, disabled=not st.session_state.messages):
+        st.session_state.messages = []
+        st.rerun()
 
 for message in st.session_state.messages:
     st.chat_message(message["role"]).write(message["content"])
